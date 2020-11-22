@@ -1,0 +1,137 @@
+$main-f: 'Roboto', sans-serif
+$header-f: 'Montserrat', sans-serif
+
+$main-c: rgba(0,255,154,1)
+$alt-c: rgb(0,212,224)
+$main-l-g: linear-gradient(to right, $main-c, $alt-c)
+$colored-l-g: linear-gradient(to bottom, rgba(253,86,45,1), rgba(195,193,34,1))
+$dark-c: #161616
+$s-dark-c: #333
+$gray-c: #ddd
+$light-c: #f4f4f4
+
+$ts: ease-in-out 0.25s
+
+// Utility
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+html
+  scroll-behavior: smooth
+body
+  // background-color: $light-c
+  font-family: $main-f
+  color: $s-dark-c
+  font-weight: 300
+  min-height: 5000px
+.container
+  width: 90%
+  max-width: 1100px
+  margin: 0 auto
+.text-center
+  text-align: center
+.upper
+  text-transform: uppercase
+.l-heading
+  font-size: 4rem
+  margin-bottom: 1rem
+.m-heading
+  font-size: 2.5rem
+  margin-bottom: 1rem
+h1,h2,h3,h4,h5,h6,.header-f
+  font-family: $header-f
+.main-f
+  font-family: $main-f
+%btn-shared
+  padding: 0.8rem 1.6rem
+  text-decoration: none
+  border: none
+  outline: none
+  text-transform: uppercase
+  box-shadow: 0 0 10px rgba(0,0,0,0.2)
+  display: inline-block
+  transition: all $ts
+  border-radius: 5rem
+  font-family: $header-f
+  font-weight: 500
+  &:hover
+    box-shadow: 0 0 20px rgba(0,0,0,0.3)
+.btn
+  @extend %btn-shared
+  &-main
+    @extend %btn-shared
+    background: $main-l-g
+    color: #fff
+  &-colored
+    @extend %btn-shared
+    background: $colored-l-g
+  &-light
+    @extend %btn-shared
+    background-color: #fff
+    color: $main-c
+.bg
+  &.b-circled
+    clip-path: ellipse(95% 60% at 50% 40%)
+  &.tb-circled
+    clip-path: ellipse(95% 50% at 50% 50%)
+  &-main
+    background: $main-l-g
+    color: $light-c
+    .l-heading,
+    .m-heading,
+    h2,h3,h4,h5
+      color: #fff
+  &-light
+    background-color: $light-c
+    color: $s-dark-c
+    .l-heading,
+    .m-heading,
+    h2,h3,h4,h5
+      color: $dark-c
+  &-colored
+    background: $colored-l-g
+    color: $light-c
+  &-dark
+    background-color: $dark-c
+    color: $light-c
+.flex
+  display: flex
+  &.col
+    flex-direction: column
+  &.s-between
+    justify-content: space-between
+  &.a-center
+    align-items: center
+.grid
+  display: grid
+ul
+  list-style: none
+a
+  text-decoration: none
+.py
+  &-1
+    padding: 1rem 0
+  &-2
+    padding: 2rem 0
+  &-3
+    padding: 3rem 0
+  &-4
+    padding: 4rem 0
+.my
+  &-1
+    padding: 1rem 0
+  &-2
+    padding: 2rem 0
+  &-3
+    padding: 3rem 0
+  &-4
+    padding: 4rem 0
+.inline
+  display: inline
+.block
+  display: block
+.inline-b
+  display: inline-block
+p
+  line-height: 1.5

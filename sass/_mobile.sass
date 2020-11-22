@@ -1,0 +1,128 @@
+@media screen and ( max-width: 768px )
+  // For all small screens..
+  #main-header
+    #main-nav
+      & > div.container
+        .dragger
+          display: block
+        .nav-list
+          &.hide
+            display: none
+          li
+            margin: 1rem 0
+            a
+              padding: 1rem 0
+          display: flex
+          position: fixed
+          top: 0
+          right: 0
+          background-color: rgba(0,0,0,0.9)
+          width: 100%
+          height: 100%
+          flex-direction: column
+          justify-content: center
+          align-items: center
+          padding: 2rem
+          z-index: 9999
+          i.closer
+            display: block
+        
+  
+  #about
+    & > div.container
+      .items
+        grid-template-columns: repeat(2, 1fr)
+  #help
+    & > div.container
+      grid-template-columns: 1fr
+      .help-img
+        img
+  #pricing
+    & > div.container
+      .items
+        grid-template-columns: 1fr
+  #blog
+    & > div.container
+      .items
+        grid-template-columns: 1fr
+        .item
+          img
+            height: 300px
+  #main-footer
+    & > div.container
+      .sub
+        input
+          margin-bottom: 1rem
+
+@media screen and ( max-width: 501px )
+  .showcase-img
+    position: relative
+    top: -8rem
+    img
+      width: 100%
+  #about
+    top: -8rem
+    & > div.container
+      .items
+        grid-template-columns: 1fr
+        gap: 0
+  #user-interface
+    top: -2rem
+    & > div.container
+      grid-template-columns: 1fr
+      & > div:last-child
+        a
+          margin: 0 auto 4rem
+  .testimonials
+    min-height: 100vh
+    & div.container
+      & > h1, & > p
+        bottom: 0rem !important
+        width: 100%
+      & > p
+        margin-bottom: 1rem
+      .box
+        width: 85%
+  #pricing
+    & > div.container
+      & > h2
+        margin-top: 2rem
+      & > p
+        margin-bottom: 4rem
+      .items
+        margin: 0 0 2rem 0
+        .item
+          padding: 1.5rem
+          width: 85%
+          margin: 0.5rem auto
+
+          h3
+            font-size: 1.4rem
+          h2
+            font-size: 2.5rem
+            margin: 1.5rem 0
+          ul
+            li
+              padding: 0.6rem 0
+          a
+            margin-top: 1rem
+            color: #fff
+  #blog
+    & > div.container
+      & > p
+        width: 100%
+  #main-footer
+    & > div.container
+      .sub
+        padding: 2rem 1rem
+        p
+          font-size: 1.2rem
+        input
+          width: 100%
+        a
+          width: 100%
+  .l-heading
+    font-size: 3rem
+    margin-bottom: 0.5rem
+  .m-heading
+    font-size: 2.2rem

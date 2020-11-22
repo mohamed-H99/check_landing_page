@@ -1,0 +1,468 @@
+@import 'config'
+
+
+// Header + showcase
+#main-header
+  #main-nav
+    padding: 1rem 0
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1)
+    position: sticky
+    top: 0
+    left: 0
+    background: $main-l-g
+    z-index: 6
+    & > div.container
+      #brand a
+        color: #fff
+        font-size: 2.5rem
+      .dragger
+        display: none
+        font-size: 1.5rem
+        color: $light-c
+        transition: color $ts
+        // background-color: #fff
+        &:hover
+          color: #fff
+
+        
+      .nav-list
+        i.closer
+          display: none
+          position: fixed
+          transition: color $ts
+          top: 2rem
+          right: 2rem
+          z-index: 10000
+          color: $light-c
+          font-size: 1.5rem
+        li
+          margin-left: 1rem
+          a
+            padding: 1rem 0
+            color: $light-c
+            overflow: hidden
+            position: relative
+            transition: all $ts
+            font-weight: 400
+            color: #fff
+            &:before
+              content: ''
+              position: absolute
+              bottom: 0
+              left: -100%
+              width: 100%
+              height: 2px
+              background-color: #fff
+              opacity: 0
+              transition: all $ts
+            &:hover:before
+              opacity: 1
+              left: 0
+            
+
+// showcase
+#main-header
+  #showcase
+    min-height: 100vh
+    clip-path: ellipse(95% 60% at 50% 30%)
+    & > div.container
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      height: 100vh
+      // background-color: #000
+      p
+        margin-bottom: 2rem
+
+.showcase-img
+  position: relative
+  top: -15rem
+  img
+    width: 70%
+    display: block
+    margin: auto
+    pointer-events: none
+        
+
+#about
+  position: relative
+  top: -15rem
+  & > div.container
+    .items
+      grid-template-columns: repeat(3, 1fr)
+      gap: 1rem
+      .item
+        padding: 2rem 1rem
+        i
+          font-size: 1.8rem
+          color: #999
+        h3
+          margin: 1.4rem 0 0.8rem
+          font-size: 1.5rem
+        p
+          line-height: 1.5
+
+#user-interface
+  position: relative
+  top: -10rem
+  & > div.container
+    grid-template-columns: 1fr 1fr
+    gap: 2rem
+    .user-img
+      img
+        width: 100%
+    div:last-child
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      h3
+        font-size: 1.5rem
+      p
+        line-height: 1.7
+        margin: 1.5rem 0
+      a
+        color: #fff
+
+
+#pop-video
+  min-height: 90vh
+  clip-path: ellipse(95% 50% at 50% 50%)
+  & div.container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 90vh
+    position: relative
+    h1
+      position: relative
+      bottom: 6rem
+    .circles
+      position: absolute
+      width: 7rem
+      height: 7rem
+      border-radius: 50%
+      background: rgba(255,255,255,0.1)
+      border: 1px solid rgba(255,255,255,0.5)
+      top: 56%
+      left: 50%
+      transform: translate(-50%,-50%)
+      &:before
+        content: ''
+        position: absolute
+        top: 56%
+        left: 50%
+        transform: translate(-50%,-50%)
+        width: 10rem
+        height: 10rem
+        border-radius: 50%
+        background: rgba(255,255,255,0.08)
+        border: 1px solid rgba(255,255,255,0.4)
+      &:after
+        content: ''
+        position: absolute
+        top: 56%
+        left: 50%
+        transform: translate(-50%,-50%)
+        width: 13rem
+        height: 13rem
+        border-radius: 50%
+        background: rgba(255,255,255,0.05)
+        border: 1px solid rgba(255,255,255,0.2)
+    i
+      font-size: 4rem
+      cursor: pointer
+      transition: all $ts
+      box-shadow: 0 0 10px rgba(0,0,0,0.05)
+      border-radius: 5rem
+      position: relative
+      z-index: 1
+      &:hover
+        box-shadow: 0 0 20px rgba(0,0,0,0.3)
+      &:after
+        content: ''
+        position: absolute
+        top: 0px
+        left: 0px
+        background: #fff
+        border-radius: 5rem
+        width: 100%
+        height: 100%
+        animation: circling 1.5s forwards 0.1s infinite
+        transform: scale(1)
+        z-index: -2
+#video-demo
+  &.hide
+    display: none
+  position: fixed
+  z-index: 9999
+  background: rgba(0,0,0,0.8)
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  i
+    position: absolute
+    top: 2rem
+    right: 2rem
+    font-size: 2rem
+    color: $gray-c
+    transition: color $ts
+    &:hover
+      color: #fff
+      cursor: pointer
+  video
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 70%
+    max-width: 90%
+    height: auto
+    object-fit: cover
+
+
+@keyframes circling
+  0%
+    transform: scale(1)
+    opacity: 0.8
+  100%
+    transform: scale(1.5)
+    opacity: 0
+
+#help
+  & > div.container
+    grid-template-columns: 1fr 1fr
+    gap: 2rem
+    & > div:first-child
+      flex-direction: column
+      div.box
+        padding: 2rem 1rem
+        border-radius: 10px
+        cursor: pointer
+        display: flex
+        margin-bottom: 1rem
+        
+        i
+          margin-right: 1rem
+          padding: 1rem
+          width: 4rem
+          height: 4rem
+          font-size: 2.5rem
+          text-align: center
+          border-radius: 50%
+          background: $main-c
+          transition: background $ts
+          color: #fff
+          line-height: 1
+        &:first-child,
+        &:last-child
+          transition: box-shadow $ts
+          &:hover
+            background: $main-l-g
+            color: #fff
+            box-shadow: 0 0 20px rgba(0,0,0,0.1)
+            i
+              background: #fff
+              color: $main-c
+        &:nth-child(2)
+          i
+            background: #fff
+            color: $main-c
+          &:hover
+            // background-color: $main-l-g
+        & > div
+          h3
+            font-size: 1.3rem
+            margin-bottom: 0.5rem
+          p
+            font-size: 0.9rem
+            line-height: 1.7
+
+    & > div.help-img
+      img
+        width: 100%
+        pointer-events: none
+
+.testimonials
+  min-height: 90vh
+  clip-path: ellipse(95% 50% at 50% 50%)
+  & div.container
+    display: block
+    & > h1, & > p
+      position: relative
+      bottom: 3rem !important
+      width: 80%
+    .box
+      width: 50%
+      img
+        width: 70px
+        height: 70px
+        border-radius: 5rem
+        display: block
+        margin: auto
+        object-fit: cover
+        background-color: #999
+        border: 2px solid rgba(255,255,255,0.9)
+      h3
+        font-size: 1.5rem
+        margin: 1rem 0
+      p
+        font-style: italic
+
+
+#pricing
+  & > div.container
+    & > h2
+      margin-top: 4rem
+    & > p
+      margin-bottom: 7rem
+    .items
+      margin: 4rem 0
+      grid-template-columns: repeat(3, 1fr)
+      .item
+        padding: 2rem
+        border: 1px solid #ccc
+        border-radius: 10px
+        color: #777
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1)
+        h3
+          font-size: 1.5rem
+          font-weight: 300
+          text-transform: uppercase
+        h2
+          font-size: 3rem
+          margin: 2rem 0
+        ul
+          li
+            padding: 0.8rem 0
+        a
+          margin-top: 1rem
+          color: #fff
+        &:nth-child(2)
+          color: $light-c
+          transform: scale(1.1)
+          a
+            color: $main-c
+
+.ad
+  div.container
+    h1
+      bottom: 0 !important
+      font-weight: 300
+    p
+      width: 80%
+      margin-bottom: 2rem
+      line-height: 1.7
+
+#blog
+  .container
+    & > p
+      width: 80%
+      margin: auto
+      color: #777
+    .items
+      grid-template-columns: repeat(3, 1fr)
+      gap: 2rem
+      margin: 4rem 0
+      .item
+        position: relative
+        border: 1px solid $light-c
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1)
+        border-radius: 10px
+        overflow: hidden
+        transition: all $ts
+        &:hover
+          transform: translateY(-5px)
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1)
+        img
+          width: 100%
+          height: 200px
+          object-fit: cover
+          background-color: #999
+          display: block
+          cursor: pointer
+        span
+          position: absolute
+          top: 1rem
+          left: 1rem
+          font-size: 1.3rem
+          background: $main-l-g
+          color: $light-c
+          text-align: center
+          padding: 0.5rem
+          width: 4rem
+          height: 4rem
+          font-family: $header-f
+          border-radius: 5rem
+        h3
+          padding: 1rem
+          cursor: pointer
+        p
+          padding: 0 1rem 1.5rem 1rem
+          color: #777
+
+#main-footer
+  clip-path: ellipse(95% 60% at 50% 60%)
+  padding-top: 4rem
+  .container
+    .sub
+      padding: 2.5rem
+      background-color: #ffffff
+      border: 1px solid $light-c
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.1)
+      border-radius: 10px
+      text-align: center
+      width: 80%
+      margin: auto
+      p
+        font-size: 1.5rem
+        margin-bottom: 1.5rem
+        color: $dark-c
+      input
+        border: 1px solid $gray-c
+        background-color: $light-c
+        color: $s-dark-c
+        font-size: 1rem
+        font-family: $main-f
+        width: 75%
+        margin-right: 5%
+        border-radius: 5rem
+        box-shadow: none
+    h1
+      color: $light-c
+      margin: 2rem 0
+      font-size: 3rem
+      pointer-events: none
+    ul
+      justify-content: center
+      align-items: center
+      li a
+        color: $main-c
+        background-color: $light-c
+        display: flex
+        justify-content: center
+        align-items: center
+        display: inline-block
+        margin: 0 1rem
+        padding: 1rem
+        width: 3rem
+        height: 3rem
+        transition: all $ts
+        border-radius: 5rem
+        &:hover
+          color: $light-c
+          background-color: $main-c
+    .footer-line
+      margin: auto
+      text-align: center
+      color: $gray-c
+      font-weight: 300
+      padding: 2rem 0
+
+
+
+  
+@import 'mobile'
